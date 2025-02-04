@@ -8,6 +8,5 @@ export default defineConfig({
   publicDir: 'public', // Garante que Vite reconhece public/
   build: {
     outDir: 'dist',
-    emptyOutDir: true,
   },
 })
