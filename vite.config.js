@@ -4,9 +4,6 @@ import tailwindcss from '@tailwindcss/vite'
 
 // https://vite.dev/config/
 export default defineConfig({
-  plugins: [react(), tailwindcss()],
-  publicDir: 'public', // Garante que Vite reconhece public/
-  build: {
-    outDir: 'dist',
-  },
+  plugins: [react(), tailwindcss(),],
+  
 })
