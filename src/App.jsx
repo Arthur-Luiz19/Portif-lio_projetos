@@ -23,7 +23,7 @@ function App() {
   return (
     <div>
       <header id='home' className={`${isModoEscuro ? 'bg-blue-900':'bg-blue-500 text-white'} text-center py-4`}>
-        <nav className={`px-4 h-20 top-0 mx-auto ${isModoEscuro ? 'bg-blue-900' : 'bg-blue-500 text-white'} flex justify-between items-center fixed w-full`}>
+        <nav className={`px-4 h-20 top-0 mx-auto ${isModoEscuro ? 'bg-blue-900' : 'bg-blue-500 text-white'} flex justify-between items-center fixed w-full z-50`}>
           <a href="#" className='text-3xl font-bold font-sans text-white ml-3'>Meu portifólio</a>
 
           <button onClick={() => setMenuOpen(!menuOpen)} className='md:hidden text-white'>
@@ -80,16 +80,16 @@ function App() {
       </header>
 
       <section className={`h-[100vh] flex flex-col justify-center items-center bg-gradient-to-b ${isModoEscuro ? 'from-blue-900 to-[#101820]' : 'from-blue-500 to-yellow-200'} `}>
-        <h1 className={`text-6xl font-bold font-serif ${isModoEscuro ? 'text-[#F8F8F8]' : ''} shadow-[15px_10px_15px_rgba(0,0,0,0.5)] px-4 mb-5`}>Arthur Luiz da Silva</h1>
-        <h1 className={`text-4xl font-bold font-serif ${isModoEscuro ? 'text-[#F8F8F8]' : ''} shadow-[15px_10px_15px_rgba(0,0,0,0.5)] px-4`}>Desenvolvedor Fullstack</h1>
+        <h1 className={` text-4xl lg:text-6xl font-bold font-serif ${isModoEscuro ? 'text-[#F8F8F8]' : ''} shadow-[15px_10px_15px_rgba(0,0,0,0.5)] px-4 mb-5`}>Arthur Luiz da Silva</h1>
+        <h1 className={`text-2xl lg:text-4xl font-bold font-serif ${isModoEscuro ? 'text-[#F8F8F8]' : ''} shadow-[15px_10px_15px_rgba(0,0,0,0.5)] px-4`}>Desenvolvedor Fullstack</h1>
       </section>
 
-      <section id='sobreMim' className={`${isModoEscuro ? 'bg-[#101820]' : 'bg-yellow-200' } h-[120vh] lg:h-full mb-[350px] md:mb-[250px] lg:mb-0`}>
+      <section id='sobreMim' className={`${isModoEscuro ? 'bg-[#101820]' : 'bg-yellow-200' } min-h-screen mb-0`}>
         <div className={`text-5xl ${isModoEscuro ? 'text-[#F8F8F8]' : 'text-gray-800' } font-black pl-3 pt-4`}>
           <h1>Sobre mim</h1>
         </div>
 
-        <div className='grid grid-cols-2 mt-20 gap-6 py-30 lg:grid-cols-12 md:gap-0'>
+        <div className='grid grid-cols-2 mt-20 gap-y-4 py-10 lg:grid-cols-12 md:gap-0'>
           <div className='col-span-5 mb-3 md:mb-8 lg:mb-0'>
             <img className='rounded-[400px] place-self-start justify-self-center shadow-[15px_15px_15px_rgba(0,0,0,0.5)]' src={Foto} alt="" width={300} />
           </div>
@@ -102,7 +102,7 @@ function App() {
 
               Minha Stack:
               <br />
-              <div className='grid grid-cols-2 my-5 pr-2'>
+              <div className='grid grid-cols-2 my-5'>
                 <span className='border-1 rounded-4xl p-3 my-2 mr-2'> <strong>Frontend:</strong> React.js, Tailwind CSS, TypeScript;</span>
                 <span className='border-1 rounded-4xl p-3 my-2 ml-2'> <strong>Backend:</strong> Node.js, Express, NestJS;</span>
                 <span className='border-1 rounded-4xl p-3 my-2 mr-2'> <strong>Banco de Dados:</strong> PostgreSQL, MySQL, SQLite;</span>
@@ -118,7 +118,7 @@ function App() {
         </div>
       </section>
 
-      <section className={`h-full bg-gradient-to-b ${isModoEscuro ? 'from-[#101820] to-blue-900' : 'from-yellow-200 to-blue-500' } `}>
+      <section className={`h-full lg:h-full bg-gradient-to-b ${isModoEscuro ? 'from-[#101820] to-blue-900' : 'from-yellow-200 to-blue-500' } `}>
         <div className={`text-5xl ${isModoEscuro ? 'text-[#F8F8F8]' : 'text-gray-800' } font-black pl-3 pt-4`}>
           <h1 id='projetos' className='mt-10'>Projetos</h1>
         </div>
@@ -126,12 +126,12 @@ function App() {
         <div className='grid grid-cols-1 py-20 sm:grid-cols-1 lg:grid-cols-2 xl:grid-cols-3 pl-20'>
 
           {/* Card #1 */}
-          <div className='bg-yellow-300 rounded-4xl shadow-lg shadow-gray-800 hover:scale-105 hover:shadow-[15px_10px_15px_rgba(0,0,0,0.5)] transition-all duration-300 ease-in-out w-[80%] sm:w-[60%] md:w-[50%] lg:w-[80%] my-5 xl:my-0'>
+          <div className='bg-yellow-300 min-h-[500px] rounded-4xl shadow-lg shadow-gray-800 hover:scale-105 hover:shadow-[15px_10px_15px_rgba(0,0,0,0.5)] transition-all duration-300 ease-in-out w-[80%] sm:w-[60%] md:w-[50%] lg:w-[80%] my-5 xl:my-0'>
             <div className='p-3'>
               <h2 className='text-2xl font-serif text-center my-2 '>Tela de cadastro com JWT</h2>
               <img className='rounded-2xl justify-self-center pb-3 ' src={registroUsuario} alt="" />
             </div>
-            <div className='bg-white rounded-4xl px-4 py-3 '>
+            <div className='bg-white min-h-[390px] rounded-4xl px-4 py-3 '>
               <p className=''>
                 Este projeto foi desenvolvido para registrar usuários, armazenando nome, e-mail e senha com segurança. A senha é criptografada usando bcrypt, e um token JWT é gerado para autenticação. No login, o token é validado e, se correto, o usuário é redirecionado para a tela de registros. No frontend, foram criadas páginas de cadastro, login e listagem de registros, todas estilizadas e organizadas para uma melhor experiência do usuário.
                 <span className='block pt-3 mb-5'><strong>Tecnologias usadas:</strong> React, CSS, Javascript, node.js, Express, Sequelize e MySQL </span>
@@ -145,7 +145,7 @@ function App() {
               <h2 className='text-2xl font-serif text-center my-2'>Gerenciamento de tarefas</h2>
               <img className='rounded-xl justify-self-center pb-2' src={gerenciarTarefas} alt="" />
             </div>
-            <div className='bg-white rounded-4xl px-4 py-3 rounded-b-4xl lg:h-[57%] md:h-[74%]'>
+            <div className='bg-white rounded-4xl px-4 py-3 rounded-b-4xl min-h-[385px]'>
               <p>Desenvolvi uma API de gerenciamento de tarefas para auxiliar os usuários em suas atividades diárias, oferecendo funcionalidades como CRUD e a opção de marcar tarefas como concluídas. No frontend, criei uma página para consumir a API, implementei um sistema de alternância entre modo claro e escuro e adicionei animações para a criação e exclusão de tarefas, proporcionando uma experiência mais dinâmica e interativa.
                 <span className='block pt-2'><strong>Tecnologias usadas:</strong> React, TailwindCSS, Javascript, node.js, Express, Sequelize e MySQL </span>
               </p>

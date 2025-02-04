@@ -4,6 +4,11 @@ import tailwindcss from '@tailwindcss/vite'
 
 // https://vite.dev/config/
 export default defineConfig({
-  plugins: [react(), tailwindcss(),],
-  
+  root: '.', // Garante que a raiz do projeto está correta
+  plugins: [react(), tailwindcss()],
+  build: {
+    outDir: 'dist', // Define a saída do build
+    emptyOutDir: true, // Garante que a pasta dist será limpa antes do build
+  }
 })
+
